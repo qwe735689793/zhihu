@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="webjars/jquery/3.3.1-2/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link href="webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet"/>
+<link href="webjars/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<div class="" style="margin:auto;background: cadetblue">
+    <div class="">
+        <button class="btn btn-primary">button</button>
+        <button class="layui-btn layui-btn-warm layui-icon layui-icon-camera"
+                style="font-size: 30px; color: #1E9FFF;">button
+        </button>
+        <button class="btn btn-danger"><i class="fa fa-users"></i>button</button>
+    </div>
+    <h2 th:text="${message}"></h2>
+    <!--    <h2 th:text="${user}?${user.name}:''"></h2>-->
+</div>
+</body>
+</html>

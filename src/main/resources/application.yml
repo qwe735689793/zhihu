@@ -1,0 +1,42 @@
+#加载mybatis配置文件
+mybatis:
+  #扫描class path下mapper目录下所有.xml文件
+  mapper-locations: classpath:mapper/*.xml
+  #实体类的包路径
+  type-aliases-package: com.demo.entity
+server:
+  port: 8082
+#数据库配置
+spring:
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/j2ee?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 123456
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
